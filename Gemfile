@@ -80,3 +80,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-material-ui'
+end
