@@ -1,28 +1,40 @@
-== README
+# React + Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Gem
 
-Things you may want to cover:
+* react-rails [reactjs/react-rails - Github](https://github.com/reactjs/react-rails)
 
-* Ruby version
+## Setup
 
-* System dependencies
+```bash
+echo 'gem "react-rails"' >> Gemfile
+bundle
 
-* Configuration
+rails g react:install
+```
 
-* Database creation
+### Edited files
 
-* Database initialization
+app/assets/javascripts/application.js
 
-* How to run the test suite
+```javascript
+//= require react
+//= require react_ujs
+//= require components
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+app/assets/javascripts/components/mycomponent.js.jsx.coffee
 
-* Deployment instructions
+```coffeescript
+@MyComponent = React.createClass
+  render: ->
+    `<div>
+      Hello {this.props.name}
+    </div>`
+```
 
-* ...
+app/views/users/index.html.slim
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```slim
+= react_component 'MyComponent', name: 'Gouf'
+```
