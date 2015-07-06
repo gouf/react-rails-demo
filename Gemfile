@@ -81,6 +81,10 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+gem 'react-rails'
+gem 'sprockets'
+gem 'sprockets-es6'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-material-ui'
 end
